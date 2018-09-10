@@ -22,7 +22,9 @@ export default class Report extends Component {
         <ul>
           {
               report && report.data && report.data.map((weather, index) => {
-                return <ReportListItems key={index} reportData={weather} />
+                if (weather) {
+                  return <ReportListItems key={index} reportData={weather} />
+                }
               })
           }
         </ul>
